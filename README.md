@@ -1,4 +1,4 @@
-# Snake RL — DQN + Visuals (Class-Ready)
+# Snake RL — DQN + Visuals 
 
 This repo contains:
 - **Gymnasium-compatible Snake environment** (pixel & feature modes)
@@ -11,8 +11,6 @@ This repo contains:
 python -m venv .venv
 # Windows PowerShell:
 .\.venv\Scripts\Activate.ps1
-# macOS/Linux:
-source .venv/bin/activate
 
 pip install -r requirements.txt
 ```
