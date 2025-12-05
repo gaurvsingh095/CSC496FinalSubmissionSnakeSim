@@ -1,0 +1,2 @@
+config,seed,episodes,avg_return,survival,return_std
+configs/dqn_small.yaml,123,11496,11.662799999999988,136.0,6.282027178338801
