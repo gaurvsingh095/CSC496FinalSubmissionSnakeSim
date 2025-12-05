@@ -1,0 +1,9 @@
+gymnasium==0.29.1
+numpy>=1.23
+torch>=2.0
+tensorboard>=2.9
+tqdm>=4.65
+PyYAML>=6.0
+pygame>=2.3
+imageio>=2.31
+imageio-ffmpeg>=0.4.9
