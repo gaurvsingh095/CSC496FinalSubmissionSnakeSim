@@ -1,0 +1,41 @@
+# size: 10
+# feature_state: false
+# frame_stack: 4
+# gamma: 0.99
+# learning_rate: 0.0001
+# batch_size: 64
+# replay_capacity: 100000
+# start_learning_after: 10000
+# target_sync_steps: 1000
+# max_steps: 300000
+# epsilon:
+#   start: 1.0
+#   end: 0.05
+#   decay_steps: 300000
+# step_penalty: -0.01
+env:
+  board_size: 8
+  feature_state: true
+  step_penalty: -0.003
+train:
+  total_steps: 300000
+  batch_size: 128
+  buffer_size: 100000
+  warmup_steps: 10000
+  gamma: 0.99
+  lr: 0.0005
+  target_sync: 2000
+  eps_start: 1.0
+  eps_end: 0.05
+  eps_decay_steps: 150000
+  dueling: true         # <- enable dueling
+  per: true             # <- enable prioritized replay
+  alpha: 0.6
+  beta0: 0.4
+  curriculum:           # <- optional curriculum
+    - {until: 80000,  size: 8}
+    - {until: 160000, size: 10}
+    - {until: 999999999, size: 12}
+log:
+  tensorboard: true
+  csv: true

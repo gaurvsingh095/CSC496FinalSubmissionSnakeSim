@@ -1,0 +1,29 @@
+﻿env:
+  board_size: 8
+  feature_state: true
+  frame_stack: 1
+  step_penalty: -0.003
+
+train:
+  total_steps: 300000
+  batch_size: 128
+  buffer_size: 100000
+  warmup_steps: 10000
+  gamma: 0.99
+  lr: 0.0005
+  target_sync: 2000
+  eps_start: 1.0
+  eps_end: 0.05
+  eps_decay_steps: 150000
+  dueling: true        # use Dueling head
+  per: false           # set true if you enabled PER in train_dqn.py
+  alpha: 0.6
+  beta0: 0.4
+  curriculum:
+    - { until: 80000,    size: 8 }
+    - { until: 160000,   size: 10 }
+    - { until: 999999999, size: 12 }
+
+log:
+  tensorboard: true
+  csv: true
